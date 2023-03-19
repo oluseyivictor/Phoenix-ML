@@ -11,6 +11,8 @@
 #include <functional>
 #include "tensor.hpp"
 
+using namespace phoenix;
+
 /**
 * @brief A class for implementing a neural network model.
 *        \n This class contains the necessary data members and methods for creating, 

@@ -10,6 +10,7 @@
 #include "nn_interface.h"
 #include <fstream>
 
+using namespace phoenix;
 
 class LinearRegression : public NeuralModel, public INeuralNetwork {
     public:

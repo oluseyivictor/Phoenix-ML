@@ -9,6 +9,7 @@
 
 #include "Matrix.hpp"
 
+namespace phoenix {
 /**
 
     @brief A template class representing a Tensor, which is a collection of Matrix objects
@@ -58,5 +59,6 @@ public:
 private:
   std::vector<Matrix<T>> matrices_;
 };
+}
 
 #endif

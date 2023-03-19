@@ -18,6 +18,8 @@ double rms_error(double y_pred, double y_true);
 double pd_error(const double a, const double b);
 double scalar_multiply(double input, double weight);
 
+using namespace phoenix;
+
 /**
 
     @brief Computes the total error between a target vector and an output vector.

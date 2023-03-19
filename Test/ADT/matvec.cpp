@@ -2,6 +2,8 @@
 #include <gtest/gtest.h>
 #include "ADT/Matrix.hpp"
 
+using namespace phoenix;
+
 class MatrixTest : public ::testing::Test {
 protected:
     Matrix<double>m1;

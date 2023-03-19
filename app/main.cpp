@@ -8,6 +8,7 @@
 
 #include "config.hpp"
 
+using namespace phoenix;
 
 int main()
 {

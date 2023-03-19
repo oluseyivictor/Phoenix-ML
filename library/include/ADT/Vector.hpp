@@ -8,6 +8,7 @@
 
 #include "Matrix.hpp"
 
+namespace phoenix {
 /**
  *  @brief The Vector class represents a 1D matrix with generic programming.
  *
@@ -183,5 +184,7 @@ public:
         }
     }
 };
+
+}
 
 #endif

@@ -4,7 +4,7 @@
 #include "Vector.hpp"
 #include <string>
 
-
+using namespace phoenix;
 /**
 
     @brief Reads a file and converts its contents to a Matrix object.

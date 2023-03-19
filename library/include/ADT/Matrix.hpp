@@ -13,6 +13,8 @@
 #include <vector>
 #include <cmath>
 
+namespace phoenix {
+
 /*forward declaration of vector class*/
 template <typename T>
 class Vector;
@@ -307,5 +309,7 @@ public:
         return os;
     }
 };
+
+}
 
 #endif // MATRIX_H

@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Vector.hpp"
 
+using namespace phoenix;
 
 
 class INeuralNetwork {
