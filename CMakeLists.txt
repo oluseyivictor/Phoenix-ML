@@ -28,6 +28,6 @@ option(COMPLE_EXECUTABLE "option to compile the executable" ON)
 option(ENABLE_TESTING "option to enable a unit testing build" ON)
 
 add_subdirectory(library)
-add_subdirectory(app)
+add_subdirectory(examples)
 add_subdirectory(Test)
 
