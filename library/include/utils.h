@@ -233,9 +233,9 @@ void ShuffleMatrixRows(Matrix<T> &matrix, double randomness)
         if (dist(rng) <= randomness)
         {
             int j = i + std::uniform_int_distribution<int>(0, matrix.getRows() - i - 1)(rng);
-            std::swap_ranges(matrix.data.get() + i * matrix.getCols(),
-                             matrix.data.get() + (i + 1) * matrix.getCols(),
-                             matrix.data.get() + j * matrix.getCols());
+            std::swap_ranges(matrix.getdata()  + i * matrix.getCols(),
+                             matrix.getdata()  + (i + 1) * matrix.getCols(),
+                             matrix.getdata()  + j * matrix.getCols());
         }
     }
 }
