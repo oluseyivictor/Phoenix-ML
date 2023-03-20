@@ -12,8 +12,11 @@
 
 using namespace phoenix;
 
+/**
+ * @brief Linear Regression Application Interface .
+ */
 class LinearRegression : public NeuralModel, public INeuralNetwork {
-    public:
+    private:
 
         Matrix<double> input;
         Matrix<double> output;

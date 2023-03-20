@@ -1,7 +1,4 @@
-/**
- * @file matrix.h
- * @brief This file contains the declaration of the Matrix class.
- */
+
 
 #ifndef SIMPLE_NN_H
 #define SIMPLE_NN_H
@@ -12,8 +9,11 @@
 
 using namespace phoenix;
 
+/**
+ * @brief Neural Networl APi for solving simple and dense nn.
+ */
 class SimpleNeuralNetwork : public NeuralModel, public INeuralNetwork {
-    public:
+    private:
 
         Matrix<double> input;
         Matrix<double> output;
