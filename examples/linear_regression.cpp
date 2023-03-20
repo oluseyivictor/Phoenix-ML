@@ -34,10 +34,13 @@ int main(){
     model.train(5000);
 
     auto input = convert_row(X, 1);
-    auto w = model.predict(input);
+    auto predicted = model.predict(input);
+	double actual = y[1];
 
-    std::cout<<y[1]<<std::endl;
-	std::cout<<w<<std::endl;
+    std::cout<<actual<<std::endl;
+	std::cout<<predicted<<std::endl;
+
+	std::cout<< "error = "<<((actual-predicted[0]) / actual)<<std::endl;
 
     return 1;
 }
