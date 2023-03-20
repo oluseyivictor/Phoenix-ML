@@ -316,8 +316,6 @@ Matrix<T> RowMatrix(Matrix<T> &matrix, int nrows)
     int start = nrows > 0 ? 0 : abs(nrows);         // 0 (start) or 75(start)
     int end = nrows > 0 ? nrows : matrix.getRows(); // 35(end) or rows(end)
 
-    std::cout << start << "    " << end << std::endl;
-
     int rows = end - start;
     int cols = matrix.getCols();
 
@@ -357,8 +355,6 @@ auto train_test_split(Matrix<T> &X, Matrix<T> &Y, float test_size)
 
     test_no *= X.getRows();
     train_no *= Y.getRows();
-
-    std::cout << test_no << "------" << train_no << std::endl;
 
     struct results
     {
