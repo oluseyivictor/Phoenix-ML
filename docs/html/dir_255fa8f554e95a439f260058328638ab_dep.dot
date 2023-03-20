@@ -1,0 +1,15 @@
+digraph "/home/ml/Desktop/Phoenix-ML/library/src" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_e3d620c6b6fdb93ed3bc6186215bde2e {
+    graph [ bgcolor="#ddddee", pencolor="black", label="library" fontname="Helvetica", fontsize="10", URL="dir_e3d620c6b6fdb93ed3bc6186215bde2e.html"]
+  subgraph clusterdir_255fa8f554e95a439f260058328638ab {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_255fa8f554e95a439f260058328638ab.html"];
+    dir_255fa8f554e95a439f260058328638ab [shape=plaintext label="src"];
+    dir_a03fd13afb9d9adfcafc4e286f0ae9e9 [shape=box label="nnet" color="black" fillcolor="white" style="filled" URL="dir_a03fd13afb9d9adfcafc4e286f0ae9e9.html"];
+  }
+  }
+  dir_9bb0cdb2fc6936e925cffa69d90b0c80 [shape=box label="include" fillcolor="white" style="filled" color="red" URL="dir_9bb0cdb2fc6936e925cffa69d90b0c80.html"];
+  dir_a03fd13afb9d9adfcafc4e286f0ae9e9->dir_9bb0cdb2fc6936e925cffa69d90b0c80 [headlabel="1", labeldistance=1.5 headhref="dir_000006_000002.html"];
+}
