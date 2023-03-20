@@ -39,14 +39,14 @@ private:
     int rows;
     int cols;
 
-public:
+private:
     std::shared_ptr<T[]> data;
 
 public:
     /**
      * @brief Constructs a Matrix object with the specified number of rows and columns.
-     *
-     * @param list Initializer list for matrix elements
+     * @param r row index for matrix elements
+     * @param c col index for matrix elements
      */
     Matrix(int r, int c = 1) : rows(r), cols(c), data(std::make_unique<T[]>(r * c))
     {
