@@ -38,9 +38,10 @@ private:
 
    std::vector<act> A;    
 
-  public:
-  Tensor<double> network;
-  std::vector<Vector<double>> B;         
+  protected:
+
+  Tensor<double> network; /**< Tensor network */
+  std::vector<Vector<double>> B; /**< Bias of network */        
  
 
 public:
