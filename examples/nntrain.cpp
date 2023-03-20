@@ -7,16 +7,14 @@ using namespace phoenix;
 
 int main()
 {
-
+    /*Extract Data*/
     auto input_data = ReadFileToMatrix("/home/ml/Desktop/Phoenix-ML/examples/semeoin.data", ' ');
 
-    std::cout << input_data.getCols() << " X " << input_data.getRows() << std::endl;
 
     ShuffleMatrixRows(input_data, 0.5);
 
     std::vector<int> feature_mark;
     std::vector<int> label_mark;
-
     for (int i = 0; i < input_data.getCols() - 10; i++)
     {
         feature_mark.push_back(i);
@@ -26,23 +24,24 @@ int main()
     {
         label_mark.push_back(i);
     }
-
     auto feature_data = SetMatrix(input_data, feature_mark);
-
     auto label_data = SetMatrix(input_data, label_mark);
 
+    /*Split into Training and Testing Data*/
     auto [X_train, X_test, Y_train, Y_test] = train_test_split(feature_data, label_data, 0.75);
+    auto actual_feature = convert_row(X_test, 1);
+    auto actual_label = convert_row(Y_test, 1);
 
-    auto feau = convert_row(X_test, 5);
-    auto lab = convert_row(Y_test, 5);
-
+    /*Load NN Model*/
     SimpleNeuralNetwork model(X_train, Y_train, {100}, 0.01);
     model.train(50);
-
     model.save("mymodel.nn");
 
-    std::cout << model.predict(feau) << std::endl;
-    std::cout << lab << std::endl;
+    auto predicted_label = model.predict(actual_feature);
+
+    predicted_label.topfill();
+    std::cout << predicted_label << std::endl;
+    std::cout << actual_label << std::endl;
 
     return 1;
 }
