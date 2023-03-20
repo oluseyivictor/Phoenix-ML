@@ -20,6 +20,9 @@ double scalar_multiply(double input, double weight);
 
 using namespace phoenix;
 
+template <typename T>
+double sum(Matrix<T> X) {   return X.Tsum(); }
+
 /**
 
     @brief Computes the total error between a target vector and an output vector.
@@ -370,5 +373,7 @@ auto train_test_split(Matrix<T> &X, Matrix<T> &Y, float test_size)
                    RowMatrix(Y, train_no),
                    RowMatrix(Y, test_no)};
 }
+
+
 
 #endif

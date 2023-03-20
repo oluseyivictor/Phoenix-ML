@@ -255,6 +255,20 @@ public:
             data[i] = d_zero;
         }
     }
+    /**
+     * @brief find the sum of all element in a matrix.
+     * @return double sum.
+     */
+    double Tsum()
+    {
+        double d_sum = 0;
+        for (int i = 0; i < size(); i++)
+        {
+
+            d_sum += data[i];
+        }
+        return d_sum;
+    };
 
     /**
     * @brief Fills the matrix with zeros except for the maximum element, which is set to 1.
