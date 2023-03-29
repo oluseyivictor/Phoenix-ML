@@ -16,8 +16,14 @@ configure_file(
     "${CMAKE_BINARY_DIR}/version_files/include/config.hpp" ESCAPE_QUOTES
 )
 
+find_package(Boost REQUIRED)
+
 add_library(${LIBRARY_NAME} STATIC ${LIBRARY_SOURCES})
 
 target_include_directories(${LIBRARY_NAME}  PUBLIC 
     ${INCLUDE_SOURCES}
     "${CMAKE_BINARY_DIR}/version_files/include/" )
+
+target_link_libraries(${LIBRARY_NAME} PUBLIC
+    Boost::boost
+)
