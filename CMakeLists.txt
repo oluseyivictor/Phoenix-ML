@@ -1,8 +1,8 @@
-cmake_minimum_required(VERSION 3.11.0)
+cmake_minimum_required(VERSION 3.16.0)
 
 Project(
     phoenix-ML
-    VERSION 1.0.0
+    VERSION 1.1.0
     LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD           17)
@@ -11,6 +11,10 @@ set(CMAKE_CXX_EXTENSIONS         ON)
 
 set(LIBRARY_NAME Library)
 set(EXECUTABLE_NAME Executable)
+
+set(Boost_USE_STATIC_LIBS OFF) 
+set(Boost_USE_MULTITHREADED ON)  
+set(Boost_USE_STATIC_RUNTIME OFF)
 
 include(FetchContent)
 
@@ -21,8 +25,24 @@ FetchContent_Declare(
     GIT_SHALLOW TRUE
 )
 
+FetchContent_Declare(
+    boost
+    URL https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.gz
+    DOWNLOAD_EXTRACT_TIMESTAMP true
+)
 
 FetchContent_MakeAvailable(googletest)
+FetchContent_GetProperties(boost)
+
+
+# Set Boost root directory
+set(BOOST_ROOT /home/ml/Desktop/Phoenix-ML/build/_deps/boost-src)
+
+
+if(NOT boost_POPULATED)
+    FetchContent_Populate(boost)
+    add_subdirectory("/home/ml/Desktop/Phoenix-ML/build/_deps/boost-subbuild")
+endif()
 
 option(COMPLE_EXECUTABLE "option to compile the executable" ON)
 option(ENABLE_TESTING "option to enable a unit testing build" ON)
