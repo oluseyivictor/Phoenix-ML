@@ -69,7 +69,7 @@ void NeuralModel::NNBuild(int input_size, int output_size, std::vector<int> &hid
     Matrix<double> weight(n, bk_n); 
 
     weight.randfill();
-    hidden_bias.zerofill();
+    hidden_bias.fill(0);
 
     network.addMatrix(weight);
     network.addMatrix(neurons);
@@ -82,7 +82,7 @@ void NeuralModel::NNBuild(int input_size, int output_size, std::vector<int> &hid
 
   Vector<double> output(last_n);
   Vector<double> output_bias(last_n); 
-  output_bias.zerofill();
+  output_bias.fill(0);
   B.push_back(output_bias);
 
   Matrix<double> weight(last_n, bk_n);
