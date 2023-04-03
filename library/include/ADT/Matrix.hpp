@@ -246,13 +246,12 @@ public:
     /**
     * @brief Fills the matrix with zeros.
     */
-    void zerofill()
+    void fill(T value)
     {
-        double d_zero = 0;
         for (int i = 0; i < size(); i++)
         {
 
-            data[i] = d_zero;
+            data[i] = value;
         }
     }
     /**
@@ -276,7 +275,7 @@ public:
     void topfill()
     {
         int position = maxposition();
-        zerofill();
+        fill(0);
         data[position] = 1;
     }
 
