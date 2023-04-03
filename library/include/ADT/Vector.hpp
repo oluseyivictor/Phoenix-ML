@@ -7,7 +7,9 @@
 #define VECTOR_H
 
 #include <boost/thread.hpp>
+#include <config.hpp>
 #include "Matrix.hpp"
+
 
 namespace phoenix {
 
@@ -123,7 +125,10 @@ public:
 
     Vector<T> result(other.size());
 
-    vector_vector_add(v, other, result, boost::thread::hardware_concurrency());
+    if (enable_parallel)
+        vector_vector_add(v, other, result, boost::thread::hardware_concurrency());
+    else
+        vector_vector_add(v, other, result);
 
     
     return result;
@@ -179,7 +184,10 @@ public:
 
         Vector<double> result(m2.getRows());
 
-        matrix_vector_multiply(m2, v1, result, boost::thread::hardware_concurrency());
+        if (enable_parallel)
+            matrix_vector_multiply(m2, v1, result, boost::thread::hardware_concurrency());
+        else
+            matrix_vector_multiply(m2, v1, result);
 
         return result;
     }
