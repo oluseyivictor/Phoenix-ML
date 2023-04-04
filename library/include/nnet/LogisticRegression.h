@@ -30,7 +30,7 @@ class LogisticRegression : public NeuralModel, public INeuralNetwork {
     
     public:
         /**
-         * @brief Constructs a Linear Regression object.
+         * @brief Constructs a Logistic Regression object.
          *
          * @param rin The input matrix for the model.
          * @param rout The output matrix for the model.
@@ -40,7 +40,7 @@ class LogisticRegression : public NeuralModel, public INeuralNetwork {
                         );
 
          /**
-         * @brief Constructs a Linear Regression with default values.
+         * @brief Constructs a LogisticRegression with default values.
          */
         LogisticRegression();
 
