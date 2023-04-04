@@ -4,7 +4,8 @@ set(LIBRARY_SOURCES
     "src/io.cpp"
     "src/nnet/nn.cpp"
     "src/nnet/simplenn.cpp"
-    "src/nnet/LinearRegression.cpp")
+    "src/nnet/LinearRegression.cpp"
+    "src/nnet/LogisticRegression.cpp")
 
 set(INCLUDE_SOURCES 
     "include/"
