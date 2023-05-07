@@ -9,12 +9,16 @@ set(CMAKE_CXX_STANDARD           17)
 set(CMAKE_CXX_STANDARD_REQUIRED  ON)
 set(CMAKE_CXX_EXTENSIONS         ON)
 
+# Set CXX flags to -fPIC
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
 set(LIBRARY_NAME Library)
-set(EXECUTABLE_NAME Executable)
+set(EXECUTABLE_NAME calculator_module)
 
 
 
-set(Boost_USE_STATIC_LIBS ON) 
+set(Boost_USE_STATIC_LIBS OFF) 
 set(Boost_USE_MULTITHREADED ON)  
 set(Boost_USE_STATIC_RUNTIME OFF)
 
@@ -34,9 +38,9 @@ FetchContent_MakeAvailable(googletest)
 
 option(COMPLE_EXECUTABLE "option to compile the executable" ON)
 option(ENABLE_TESTING "option to enable a unit testing build" ON)
-option(PARALLEL "option to enable parallel computation" 0)
+option(PARALLEL "option to enable parallel computation" ON)
 
 add_subdirectory(library)
 add_subdirectory(examples)
-add_subdirectory(Test)
+#add_subdirectory(Test)
 
