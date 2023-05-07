@@ -1,5 +1,8 @@
 #pragma once
 
+#define OFF 0
+#define ON 1
+
 #include <cstdint>
 #include <string_view>
 
