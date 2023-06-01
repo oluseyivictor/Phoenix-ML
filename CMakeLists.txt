@@ -19,7 +19,7 @@ set(EXECUTABLE_NAME calculator_module)
 
 
 set(Boost_USE_STATIC_LIBS OFF) 
-set(Boost_USE_MULTITHREADED ON)  
+set(Boost_USE_MULTITHREADED OFF)  
 set(Boost_USE_STATIC_RUNTIME OFF)
 
 include(FetchContent)
@@ -38,7 +38,7 @@ FetchContent_MakeAvailable(googletest)
 
 option(COMPLE_EXECUTABLE "option to compile the executable" ON)
 option(ENABLE_TESTING "option to enable a unit testing build" ON)
-option(PARALLEL "option to enable parallel computation" ON)
+option(PARALLEL "option to enable parallel computation" OFF)
 
 add_subdirectory(library)
 add_subdirectory(examples)
