@@ -55,36 +55,30 @@ class Wlinear
 {
     public:
         Wlinear(const np::ndarray& values, const np::ndarray& malues) 
-        : m_values(values), v_values(malues) {
+        {
                 /*Generate Random data*/
-    extract_matnum(values, X);
-    extract_matnum(malues, y);
+            extract_matnum(values, X);
+            extract_matnum(malues, y);
 
-    std::cout<<X<<std::endl;
-    std::cout<<y<<std::endl;
-
-	/* Linear Model*/
-	my_model = new LinearRegression(X, y);
-     }
-
-     ~Wlinear()
-     {
-        delete my_model;
-     }
-
+	            /* Linear Model*/
+	        my_model = new LinearRegression(X, y);
+        }
+         ~Wlinear()
+        {
+            delete my_model;
+        }
         void train(int epochs)
         {
-            
             my_model->train(epochs);
         }
 
         np::ndarray predict(const np::ndarray& talues)
         {
-           Matrix<double> arr1;
-           extract_matnum(talues, arr1);
-           auto y = convert_col(arr1, 0);
-           predicted = my_model->predict(y);
-           return convert_matrix_to_numpy(predicted);
+            Matrix<double> arr1;
+            extract_matnum(talues, arr1);
+            auto y = convert_col(arr1, 0);
+            predicted = my_model->predict(y);
+            return convert_matrix_to_numpy(predicted);
         }
 
         void pprint(void)
@@ -93,13 +87,10 @@ class Wlinear
         }
 
     public:
-        np::ndarray m_values;
-        np::ndarray v_values;
         INeuralNetwork* my_model;
         Matrix<double> X;
         Matrix<double> y;
         Matrix<double> predicted;
-
 };
 
 BOOST_PYTHON_MODULE(calculator_module) {
