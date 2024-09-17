@@ -16,16 +16,16 @@ configure_file(
     "config.hpp.in"
     "${CMAKE_BINARY_DIR}/version_files/include/config.hpp" ESCAPE_QUOTES
 )
-
-find_package(Boost COMPONENTS thread system REQUIRED)
+find_package(Boost 1.86.0 REQUIRED)
 
 add_library(${LIBRARY_NAME} STATIC ${LIBRARY_SOURCES})
 
 target_include_directories(${LIBRARY_NAME}  PUBLIC 
     ${INCLUDE_SOURCES}
+    ${Boost_INCLUDE_DIRS}
     "${CMAKE_BINARY_DIR}/version_files/include/" )
 
 target_link_libraries(${LIBRARY_NAME} PUBLIC
     Boost::boost
-    Boost::thread
+    ${Boost_library}
 )

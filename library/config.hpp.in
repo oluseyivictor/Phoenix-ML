@@ -1,4 +1,5 @@
 #pragma once
+#define OFF 0
 
 #include <cstdint>
 #include <string_view>
