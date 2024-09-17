@@ -1,4 +1,7 @@
-cmake_minimum_required(VERSION 3.16.0)
+cmake_minimum_required(VERSION 3.20)
+
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+include(tool_setup)
 
 Project(
     phoenix-ML
@@ -17,23 +20,7 @@ set(LIBRARY_NAME Library)
 set(EXECUTABLE_NAME calculator_module)
 
 
-
-set(Boost_USE_STATIC_LIBS OFF) 
-set(Boost_USE_MULTITHREADED OFF)  
-set(Boost_USE_STATIC_RUNTIME OFF)
-
-include(FetchContent)
-
-FetchContent_Declare(
-    googletest
-    GIT_REPOSITORY https://github.com/google/googletest.git
-    GIT_TAG v1.13.0
-    GIT_SHALLOW TRUE
-)
-
-
-
-FetchContent_MakeAvailable(googletest)
+set(Boost_USE_STATIC_LIBS ON) 
 
 
 option(COMPLE_EXECUTABLE "option to compile the executable" ON)
